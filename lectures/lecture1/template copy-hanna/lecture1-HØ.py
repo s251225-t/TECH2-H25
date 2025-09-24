@@ -22,11 +22,14 @@ import numpy as np
 def argmax(lst):
 
     N=len(lst)
+
+    if N==0: 
+        raise ValueError('Empty sequence')
     value_max= -np.inf
     imax=0
 
     for i in range(N):
-        value=list[i]
+        value=lst[i]
         if value>value_max:
 
             imax=i
@@ -34,6 +37,7 @@ def argmax(lst):
     return imax
 
 values=[2, 3, -1, 7, 4]
+
 
 i=argmax(values)
 print(f'index of max value: {i}')
